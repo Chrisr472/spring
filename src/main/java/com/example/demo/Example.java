@@ -17,6 +17,17 @@ public class Example {
 	@Autowired
 	private NewEmployeeDetailsRepo employeeRepo;
 	
+	 @GetMapping("/student")
+	    public List<Data> ll(Model model) {
+			
+	        
+		 List<Data> l=studentRepo.findAll();				
+				
+	        
+	       
+	         return l ;
+	    }
+	 
 	 @PostMapping("/students")
     public String create( @RequestBody Data data ) {
 		
