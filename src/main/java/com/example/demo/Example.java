@@ -55,10 +55,10 @@ public class Example {
 	 @GetMapping("/employee")
 	    public NewEmployeeDetails list(Model model) {
 		   
-		 employeeRepo.save( new NewEmployeeDetails("Chris Rohan ","22/11/2000","Manivannan S M","Shirley Mary Vanitha ","8825896232",addressRepo.findAll())) ;
+		 return new NewEmployeeDetails("Chris Rohan ","22/11/2000","Manivannan S M","Shirley Mary Vanitha ","8825896232",addressRepo.findAll()) ;
 		   
 		 
-	        return employeeRepo.getById(1) ;
+	         
 	    }
 	 
 	 @DeleteMapping("/deleteall")

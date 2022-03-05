@@ -11,6 +11,9 @@ public class Address {
 	private Integer addressid;
 	private String addressLineOne,addressLineTwo,pincode,state,country;
 	
+	public Address() {
+		super();
+	}
 	public Address(String addressLineOne, String addressLineTwo, String pincode, String state, String country) {
 		super();
 		this.addressLineOne = addressLineOne;

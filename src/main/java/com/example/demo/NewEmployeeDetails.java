@@ -20,6 +20,10 @@ private String name,dob,fatherName,motherName,number;
 List<Address> address;
 
 
+public NewEmployeeDetails() {
+	super();
+}
+
 public NewEmployeeDetails(String name, String dob, String fatherName, String motherName, String number,
 		List<Address> address) {
 	super();
