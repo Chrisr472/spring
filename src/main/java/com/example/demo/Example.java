@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.*;
 public class Example {
 	@Autowired
 	private DataRepository studentRepo;
-	 
+	
+	@Autowired
+	private AddressRepository addressRepo;
+	
 	 @PostMapping("/students")
     public String create( @RequestBody Data data ) {
 		
@@ -20,24 +23,31 @@ public class Example {
 			
         
        
-        return "Created";
+         return "Created";
     }
 	 @GetMapping("/studenti")
 	 public String getById(@RequestParam(value="id") String i)
-	 {   Integer s=Integer.parseInt(i);
-		
+	 {      Integer s=Integer.parseInt(i);
+		    
 			Data l =studentRepo.getById(s);
             return l.toString();
 	 }
 	 
-	 @GetMapping("/student")
-	    public List<Data> listById(Model model) {
-			
+	 @GetMapping("/address")
+	    public List<Address> listById(Model model) {
+		    Address ad1 = new Address("No.98,3rd Cross","Ponnagar Trichy ","620001","TamilNdau","India");
+		    Address ad2 = new Address("No.98,Cross","Ponnagar Tri ","620001","TamilNdau","India");
+		    Address ad3 = new Address("No.98,3rdoss","Ponnagar Tchy ","690001","Tamil Ndau","India");
+		    addressRepo.save(ad1);
+		    addressRepo.save(ad2);
+		    addressRepo.save(ad3);
+			List<Address> ad= addressRepo.findAll();
 	        
-		    List<Data> listStudents = studentRepo.findAll();
+		    
 	       
-	        return  listStudents;
+	        return  ad;
 	    }
+	 
 	 @DeleteMapping("/deleteall")
 	 public ResponseEntity<String> delete(Model model)
 	 {   
