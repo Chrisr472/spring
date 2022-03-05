@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://springboot-postgressql.herokuapp.com/")
 @RestController
 public class Example {
 	@Autowired
