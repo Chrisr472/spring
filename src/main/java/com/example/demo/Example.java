@@ -14,6 +14,8 @@ public class Example {
 	@Autowired
 	private AddressRepository addressRepo;
 	
+	private NewEmployeeDetailsRepo employeeRepo;
+	
 	 @PostMapping("/students")
     public String create( @RequestBody Data data ) {
 		
@@ -41,11 +43,21 @@ public class Example {
 		    addressRepo.save(ad1);
 		    addressRepo.save(ad2);
 		    addressRepo.save(ad3);
+		    
 			List<Address> ad= addressRepo.findAll();
 	        
 		    
 	       
 	        return  ad;
+	    }
+	 
+	 @GetMapping("/employee")
+	    public NewEmployeeDetails list(Model model) {
+		   
+		 employeeRepo.save( new NewEmployeeDetails("Chris Rohan ","22/11/2000","Manivannan S M","Shirley Mary Vanitha ","8825896232",addressRepo.findAll())) ;
+		   
+		 
+	        return employeeRepo.getById(1) ;
 	    }
 	 
 	 @DeleteMapping("/deleteall")

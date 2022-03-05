@@ -19,6 +19,18 @@ private String name,dob,fatherName,motherName,number;
 @OrderColumn(name="type")
 List<Address> address;
 
+
+public NewEmployeeDetails(String name, String dob, String fatherName, String motherName, String number,
+		List<Address> address) {
+	super();
+	this.name = name;
+	this.dob = dob;
+	this.fatherName = fatherName;
+	this.motherName = motherName;
+	this.number = number;
+	this.address = address;
+}
+
 /**
  * @return the id
  */
