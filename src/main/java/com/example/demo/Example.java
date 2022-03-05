@@ -14,6 +14,7 @@ public class Example {
 	@Autowired
 	private AddressRepository addressRepo;
 	
+	@Autowired
 	private NewEmployeeDetailsRepo employeeRepo;
 	
 	 @PostMapping("/students")
