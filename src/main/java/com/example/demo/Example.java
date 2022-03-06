@@ -49,6 +49,7 @@ public class Example {
 	 
 	 @GetMapping("/address")
 	    public List<Address> listById(Model model) {
+		   addressRepo.deleteAll();
 		    Address ad1 = new Address("No.98,3rd Cross","Ponnagar Trichy ","620001","TamilNdau","India");
 		    Address ad2 = new Address("No.98,Cross","Ponnagar Tri ","620001","TamilNdau","India");
 		    Address ad3 = new Address("No.98,3rdoss","Ponnagar Tchy ","690001","Tamil Ndau","India");
