@@ -27,7 +27,11 @@ public class Example {
 	       
 	         return l ;
 	    }
-	 
+	 @GetMapping("/admin")
+	 public  String  admin(@RequestParam(name="email") String  email,@RequestParam(name="password") String  password)
+	 {
+		 return (email.equals("admin")&&password.equals("root"))?"Logged In":"Invalid password";
+	 }
 	 @PostMapping("/students")
     public String create( @RequestBody Data data ) {
 		
