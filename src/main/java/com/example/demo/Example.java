@@ -77,6 +77,7 @@ public class Example {
 	         
 	    }
 	 
+	 
 	 @DeleteMapping("/deleteall")
 	 public ResponseEntity<String> delete(Model model)
 	 {   
