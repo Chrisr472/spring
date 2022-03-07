@@ -1,5 +1,6 @@
 package com.example.demo;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -53,13 +54,8 @@ public class Example {
 	 
 	 @GetMapping("/address")
 	    public List<Address> listById(Model model) {
-		   addressRepo.deleteAll();
-		    Address ad1 = new Address("No.98,3rd Cross","Ponnagar Trichy ","620001","TamilNdau","India");
-		    Address ad2 = new Address("No.98,Cross","Ponnagar Tri ","620001","TamilNdau","India");
-		    Address ad3 = new Address("No.98,3rdoss","Ponnagar Tchy ","690001","Tamil Ndau","India");
-		    addressRepo.save(ad1);
-		    addressRepo.save(ad2);
-		    addressRepo.save(ad3);
+		   
+		   
 		    
 			List<Address> ad= addressRepo.findAll();
 	        
@@ -70,13 +66,14 @@ public class Example {
 	 
 	 @GetMapping("/employee")
 	    public NewEmployeeDetails list(Model model) {
+		 addressRepo.save(new Address("No.98,3rd Cross","Ponnagar Trichy ","620001","TamilNdau","Indwwddwa"));
+		 NewEmployeeDetails ee= new NewEmployeeDetails("Chris Rohan ","22/11/2000","Manivannan S M","Shirley Mary Vanitha ","8825896232",addressRepo.findAll());
+		   employeeRepo.save(ee);
+		  
 		   
-		 return new NewEmployeeDetails("Chris Rohan ","22/11/2000","Manivannan S M","Shirley Mary Vanitha ","8825896232",addressRepo.findAll()) ;
-		   
-		 
+		  return ee;
 	         
 	    }
-	 
 	 
 	 @DeleteMapping("/deleteall")
 	 public ResponseEntity<String> delete(Model model)

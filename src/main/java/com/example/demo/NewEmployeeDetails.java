@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import java.util.List;
+import java.util.*;
 
 import javax.persistence.*;
 
@@ -9,14 +9,16 @@ import javax.persistence.*;
 public class NewEmployeeDetails {
 	
 @Id
-@GeneratedValue(strategy=GenerationType.TABLE)
+@GeneratedValue(strategy=GenerationType.IDENTITY)
 private Integer id;
 
 private String name,dob,fatherName,motherName,number;
 
-@OneToMany(cascade=CascadeType.ALL)
-@JoinColumn(name="a_id")
-@OrderColumn(name="type")
+//@OneToMany(cascade=CascadeType.ALL)
+//@JoinColumn(name="a_id")
+//@OrderColumn(name="type")
+@ManyToMany
+@JoinTable(name="Employee_address",joinColumns= @JoinColumn(name="emp"),inverseJoinColumns=@JoinColumn(name="add"))
 List<Address> address;
 
 
