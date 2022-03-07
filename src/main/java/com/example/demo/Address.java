@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Address {
 	
 	@Id
-	@GeneratedValue(strategy =GenerationType.SEQUENCE)
+	@GeneratedValue(strategy =GenerationType.AUTO)
 	private Integer addressid;
 	private String addressLineOne,addressLineTwo,pincode,state,country;
 	
