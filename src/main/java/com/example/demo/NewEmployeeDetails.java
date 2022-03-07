@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class NewEmployeeDetails {
 	
 @Id
-@GeneratedValue(strategy=GenerationType.IDENTITY)
+@GeneratedValue(strategy=GenerationType.TABLE)
 private Integer id;
 
 private String name,dob,fatherName,motherName,number;
